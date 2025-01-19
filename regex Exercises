@@ -1,0 +1,103 @@
+Basic Regex Exercises
+
+Match Email Addresses
+
+Task: Write a regex to match valid email addresses.
+Hint: Use \w, @, and domain patterns like .com or .org.
+Example Input: user@example.com, invalid@com, test123@domain.org
+Expected Output: user@example.com, test123@domain.org
+Match Dates in DD-MM-YYYY Format
+
+Task: Match dates in the format DD-MM-YYYY.
+Hint: Use \d{2}-\d{2}-\d{4}.
+Example Input: Today's date is 19-01-2025, but not 19-1-2025.
+Expected Output: 19-01-2025
+
+Match Hexadecimal Colors
+
+Task: Match CSS hex colors like #123ABC or #FFF.
+Hint: Use #[A-Fa-f0-9]{3,6}.
+Example Input: background-color: #1A2B3C; border: #FFF solid 1px;
+Expected Output: #1A2B3C, #FFF
+
+Intermediate Regex Exercises
+
+Positive Lookahead: Match Words Followed by a Specific Word
+
+Task: Match all words that are followed by "cat".
+Hint: Use \b\w+(?=\s+cat).
+Example Input: I saw a black cat and a white cat.
+Expected Output: black, white
+
+Negative Lookahead: Exclude Words Ending with "ing"
+
+Task: Match all words that do not end with "ing".
+Hint: Use \b\w+(?!ing)\b.
+Example Input: Running is fun, but walking is better.
+Expected Output: is, fun, but, is, better
+
+Positive Lookbehind: Match Prices
+
+Task: Match numbers that follow a currency symbol like $ or €.
+Hint: Use (?<=\$|€)\d+.
+Example Input: The item costs $20 and the other one is €15.
+Expected Output: 20, 15
+
+Negative Lookbehind: Match Words Not Preceded by "not"
+
+Task: Match all words that are not preceded by "not".
+Hint: Use (?<!not\s)\b\w+\b.
+Example Input: This is not funny, but still interesting.
+Expected Output: This, is, but, still, interesting
+Real-World Examples
+
+Web Crawler: Extract All URLs
+
+Task: Write a regex to extract all URLs from an HTML page.
+Hint: Use href="(https?://[^"]+)".
+Example Input: <a href="https://example.com">Example</a>
+Expected Output: https://example.com
+
+Match JavaScript Function Names
+
+Task: Match the names of all JavaScript functions in a file.
+Hint: Use function\s+(\w+)\s*\(.
+Example Input: function greet() { console.log('Hello'); }
+Expected Output: greet
+
+Extract File Names from Paths
+
+Task: Extract file names (with extensions) from file paths.
+Hint: Use [^\\/]+\.\w+$.
+Example Input: /home/user/documents/file.txt
+Expected Output: file.txt
+
+Creative Exercises
+
+Extract YouTube Video IDs
+
+Task: Extract video IDs from YouTube URLs.
+Hint: Use v=([^&]+).
+Example Input: https://www.youtube.com/watch?v=abc123&feature=share
+Expected Output: abc123
+
+Detect Phone Numbers
+
+Task: Match phone numbers in various formats (e.g., (123) 456-7890 or 123-456-7890).
+Hint: Use \(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}.
+Example Input: Call me at (123) 456-7890 or 123-456-7890.
+Expected Output: (123) 456-7890, 123-456-7890
+
+Extract Hashtags
+
+Task: Extract all hashtags from a social media post.
+Hint: Use #\w+.
+Example Input: Loving the #sunset and #vacation vibes!
+Expected Output: #sunset, #vacation
+
+Validate Passwords
+
+Task: Match passwords with at least one uppercase letter, one digit, and one special character.
+Hint: Use (?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}.
+Example Input: Password123! is valid, but pass123 is not.
+Expected Output: Password123!
